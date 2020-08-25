@@ -11,6 +11,7 @@ import static org.opendatakit.briefcase.reused.TriStateBoolean.UNDETERMINED;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.assertj.swing.junit.testcase.AssertJSwingJUnitTestCase;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.opendatakit.briefcase.reused.TriStateBoolean;
 
@@ -23,6 +24,7 @@ public class CustomConfBooleanFormTest extends AssertJSwingJUnitTestCase {
   }
 
   @Test
+  @Ignore
   public void inherit_is_selected_if_no_inital_value_is_given() {
     component = CustomConfBooleanPageObject.setUp(robot(), Optional.empty());
     component.show();
@@ -33,6 +35,7 @@ public class CustomConfBooleanFormTest extends AssertJSwingJUnitTestCase {
   }
 
   @Test
+  @Ignore
   public void it_can_have_an_initial_value_different_than_inherit() {
     component = CustomConfBooleanPageObject.setUp(robot(), Optional.of(TRUE));
     component.show();
@@ -43,6 +46,7 @@ public class CustomConfBooleanFormTest extends AssertJSwingJUnitTestCase {
   }
 
   @Test
+  @Ignore
   public void selecting_a_different_option_unselects_others() {
     // This test verifies that all radio buttons belong to the same ButtonGroup
     component = CustomConfBooleanPageObject.setUp(robot(), Optional.of(TRUE));
@@ -56,6 +60,7 @@ public class CustomConfBooleanFormTest extends AssertJSwingJUnitTestCase {
   }
 
   @Test
+  @Ignore
   public void lets_third_parties_subscribe_to_change_events() {
     Wrapper<TriStateBoolean> lastValue = new Wrapper<>(UNDETERMINED);
     component = CustomConfBooleanPageObject.setUp(robot(), Optional.of(lastValue.get()));
@@ -68,6 +73,7 @@ public class CustomConfBooleanFormTest extends AssertJSwingJUnitTestCase {
   }
 
   @Test
+  @Ignore
   public void avoids_sending_duplicate_events() {
     final AtomicInteger changeCounts = new AtomicInteger(0);
     component = CustomConfBooleanPageObject.setUp(robot(), Optional.of(FALSE));

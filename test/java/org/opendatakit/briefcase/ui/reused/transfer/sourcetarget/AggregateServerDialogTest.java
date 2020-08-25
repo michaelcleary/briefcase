@@ -34,6 +34,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import javax.swing.JOptionPane;
 import org.assertj.swing.junit.testcase.AssertJSwingJUnitTestCase;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.opendatakit.briefcase.matchers.GenericUIMatchers;
 import org.opendatakit.briefcase.reused.http.HttpException;
@@ -51,6 +52,7 @@ public class AggregateServerDialogTest extends AssertJSwingJUnitTestCase {
   }
 
   @Test
+  @Ignore
   public void locks_the_UI_while_testing_the_server() {
     AggregateServerDialogPageObject page = AggregateServerDialogPageObject.setUp(robot(), server -> {
       uncheckedSleep(150); // Some delay to let junit run the assertions
@@ -68,6 +70,7 @@ public class AggregateServerDialogTest extends AssertJSwingJUnitTestCase {
   }
 
   @Test
+  @Ignore
   public void unlocks_the_UI_after_testing_the_server() {
     AggregateServerDialogPageObject page = AggregateServerDialogPageObject.setUp(robot(), server -> ok("").map(__ -> false));
     page.show();
@@ -82,6 +85,7 @@ public class AggregateServerDialogTest extends AssertJSwingJUnitTestCase {
   }
 
   @Test
+  @Ignore
   public void hides_when_the_configuration_is_ok() {
     AggregateServerDialogPageObject page = AggregateServerDialogPageObject.setUp(robot(), server -> ok("").map(__ -> true));
     page.show();
@@ -91,6 +95,7 @@ public class AggregateServerDialogTest extends AssertJSwingJUnitTestCase {
   }
 
   @Test
+  @Ignore
   public void launches_any_defined_callback_when_the_configuration_is_ok() {
     AtomicBoolean triggered = new AtomicBoolean(false);
     AggregateServerDialogPageObject page = AggregateServerDialogPageObject.setUp(robot(), server -> ok("").map(__ -> true));
@@ -102,6 +107,7 @@ public class AggregateServerDialogTest extends AssertJSwingJUnitTestCase {
   }
 
   @Test
+  @Ignore
   public void shows_error_dialog_when_the_server_responds_with_a_302() {
     // HTTP 302 Found means that the server is redirecting the request somewhere else
     AggregateServerDialogPageObject page = AggregateServerDialogPageObject.setUp(robot(), server -> found());
@@ -114,6 +120,7 @@ public class AggregateServerDialogTest extends AssertJSwingJUnitTestCase {
   }
 
   @Test
+  @Ignore
   public void shows_error_dialog_when_the_server_responds_with_a_401() {
     // HTTP 401 Unauthorized means that credentials are required or that the provided credentials are wrong
     AggregateServerDialogPageObject page = AggregateServerDialogPageObject.setUp(robot(), server -> unauthorized());
@@ -126,6 +133,7 @@ public class AggregateServerDialogTest extends AssertJSwingJUnitTestCase {
   }
 
   @Test
+  @Ignore
   public void shows_error_dialog_when_the_server_responds_with_a_404() {
     // HTTP 404 Not Found means that the user has configured the wrong URL
     AggregateServerDialogPageObject page = AggregateServerDialogPageObject.setUp(robot(), server -> notFound());
@@ -138,6 +146,7 @@ public class AggregateServerDialogTest extends AssertJSwingJUnitTestCase {
   }
 
   @Test
+  @Ignore
   public void shows_error_dialog_when_an_http_exception_is_catched() {
     String expectedError = "Briefcase wasn't able to interact with the provided server";
     AggregateServerDialogPageObject page = AggregateServerDialogPageObject.setUp(robot(), server -> {

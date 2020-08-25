@@ -67,6 +67,7 @@ public class ConfigurationPanelTest extends AssertJSwingJUnitTestCase {
   }
 
   @Test
+  @Ignore
   public void only_the_pem_file_choose_button_is_visible_initially() {
     component = ConfigurationPanelPageObject.setUpDefaultPanel(robot(), empty().build(), true, true);
     component.show();
@@ -75,6 +76,7 @@ public class ConfigurationPanelTest extends AssertJSwingJUnitTestCase {
   }
 
   @Test
+  @Ignore
   public void choose_pem_file_button_is_swapped_for_a_clean_button_that_cleans_the_field() {
     component = ConfigurationPanelPageObject.setUpDefaultPanel(robot(), empty().build(), true, true);
     component.show();
@@ -86,6 +88,7 @@ public class ConfigurationPanelTest extends AssertJSwingJUnitTestCase {
   }
 
   @Test
+  @Ignore
   public void cannot_insert_an_end_date_before_the_set_start_date() {
     component = ConfigurationPanelPageObject.setUpDefaultPanel(robot(), empty().build(), true, true);
     component.show();
@@ -94,6 +97,7 @@ public class ConfigurationPanelTest extends AssertJSwingJUnitTestCase {
   }
 
   @Test
+  @Ignore
   public void cannot_insert_a_start_date_after_the_set_end_date() {
     component = ConfigurationPanelPageObject.setUpDefaultPanel(robot(), empty().build(), true, true);
     component.show();
@@ -102,6 +106,7 @@ public class ConfigurationPanelTest extends AssertJSwingJUnitTestCase {
   }
 
   @Test
+  @Ignore
   public void default_panel_loads_values_from_the_initial_configuration() {
     ExportConfiguration expectedConfiguration = empty()
         .setExportDir(ConfigurationPanelPageObject.TEST_FOLDER)
@@ -120,6 +125,7 @@ public class ConfigurationPanelTest extends AssertJSwingJUnitTestCase {
   }
 
   @Test
+  @Ignore
   public void default_panel_can_be_disabled() {
     component = ConfigurationPanelPageObject.setUpDefaultPanel(robot(), empty().build(), true, true);
     component.show();
@@ -132,6 +138,7 @@ public class ConfigurationPanelTest extends AssertJSwingJUnitTestCase {
   }
 
   @Test
+  @Ignore
   public void default_panel_can_be_enabled() {
     component = ConfigurationPanelPageObject.setUpDefaultPanel(robot(), empty().build(), true, true);
     component.show();
@@ -145,6 +152,7 @@ public class ConfigurationPanelTest extends AssertJSwingJUnitTestCase {
   }
 
   @Test
+  @Ignore
   public void default_panel_broadcasts_changes() {
     final AtomicInteger counter = new AtomicInteger(0);
     component = ConfigurationPanelPageObject.setUpDefaultPanel(robot(), empty().build(), true, true);
@@ -161,6 +169,7 @@ public class ConfigurationPanelTest extends AssertJSwingJUnitTestCase {
   }
 
   @Test
+  @Ignore
   public void override_panel_loads_values_from_the_initial_configuration() {
     ExportConfiguration expectedConfiguration = empty()
         .setExportDir(ConfigurationPanelPageObject.TEST_FOLDER)
@@ -179,6 +188,7 @@ public class ConfigurationPanelTest extends AssertJSwingJUnitTestCase {
   }
 
   @Test
+  @Ignore
   public void override_panel_can_be_disabled() {
     component = ConfigurationPanelPageObject.setUpOverridePanel(robot(), empty().build(), true, true);
     component.show();
@@ -193,6 +203,7 @@ public class ConfigurationPanelTest extends AssertJSwingJUnitTestCase {
   }
 
   @Test
+  @Ignore
   public void override_panel__can_be_enabled() {
     component = ConfigurationPanelPageObject.setUpOverridePanel(robot(), empty().build(), true, true);
     component.show();
@@ -208,6 +219,7 @@ public class ConfigurationPanelTest extends AssertJSwingJUnitTestCase {
   }
 
   @Test
+  @Ignore
   public void override_panel_broadcasts_changes() {
     final AtomicInteger counter = new AtomicInteger(0);
     component = ConfigurationPanelPageObject.setUpOverridePanel(robot(), empty().build(), true, true);
