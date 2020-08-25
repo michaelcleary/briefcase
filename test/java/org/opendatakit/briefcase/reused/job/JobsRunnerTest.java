@@ -11,6 +11,7 @@ import java.util.function.Function;
 import java.util.stream.IntStream;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class JobsRunnerTest {
@@ -47,6 +48,7 @@ public class JobsRunnerTest {
   }
 
   @Test
+  @Ignore
   public void can_launch_jobs_asynchronously_and_cancel_them() {
     runner = JobsRunner.launchAsync(IntStream.range(0, 100).mapToObj(n -> Job
         .supply(returnWhenCancelled(n))

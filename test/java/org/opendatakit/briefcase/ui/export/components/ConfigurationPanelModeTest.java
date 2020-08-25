@@ -28,6 +28,7 @@ import static org.opendatakit.briefcase.ui.export.components.ConfigurationPanelM
 import java.util.Arrays;
 import java.util.Collection;
 import org.assertj.swing.junit.testcase.AssertJSwingJUnitTestCase;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -60,6 +61,7 @@ public class ConfigurationPanelModeTest extends AssertJSwingJUnitTestCase {
   }
 
   @Test
+  @Ignore
   public void decorates_fields_related_to_pulling_before_exporting() {
     ConfigurationPanelPageObject component = ConfigurationPanelPageObject.setUp(robot(), empty().build(), scenario.isOverridePanel, scenario.hasTransferSettings, scenario.savePasswords);
     component.show();
